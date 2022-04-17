@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++ build active file",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-g",
+				"-std=c++17",
+				"`pkg-config --cflags glfw3`",
+				"-I../include",
+				//"-L../lib",
+				"${file}",
+				"glad.c",
+				"../include/GaMa/Application/*.cpp",
+				//"-lglfw",
+				"`pkg-config --static --libs glfw3`",
+				"-o",
+				"${workspaceFolder}/main"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: /usr/bin/g++"
+		}
+	]
+}
