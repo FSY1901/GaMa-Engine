@@ -1,5 +1,6 @@
 {
 	"version": "2.0.0",
+	/*//Linux
 	"tasks": [
 		{
 			"type": "cppbuild",
@@ -32,4 +33,31 @@
 			"detail": "compiler: /usr/bin/g++"
 		}
 	]
+	*/
+	//Windows
+	"tasks": [
+        {
+            "label": "C/C++: g++ build active file",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-std=c++17",
+                "-I./include",
+                "-L./lib",
+                "src/\\*.cpp",
+                "src/glad.c",
+				"include/GaMa/Application/\\*.cpp",
+                "-lglfw3dll",
+                "-o",
+                "${workspaceFolder}/main.exe"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
 }
+
